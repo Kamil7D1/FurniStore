@@ -5,9 +5,11 @@ import productsRoute from "./routes/products.route.js";
 
 const app = express();
 
-app.use("api/auth", authRoute);
-app.use("api/user", userRoute);
-app.use("api/products", productsRoute);
+app.use(express.json());
+
+app.use("/api/auth", authRoute);
+app.use("/api/user", userRoute);
+app.use("/api/products", productsRoute);
 app.listen(3000, () => {
     console.log("Server is running!");
 });
